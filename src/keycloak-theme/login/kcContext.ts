@@ -20,12 +20,12 @@ export const { getKcContext } = createGetKcContext<KcContextExtension>({
 			pageId: "login.ftl",
 			locale: {
 				//When we test the login page we do it in french
-				currentLanguageTag: "fr",
+				currentLanguageTag: "en",
 			},
 			//Uncomment the following line for hiding the Alert message
 			//"message": undefined
 			//Uncomment the following line for showing an Error message
-			message: { type: "error", summary: "This is an error" }
+			//message: { type: "error", summary: "This is an error" }
 		},
 		{
 			pageId: "my-extra-page-2.ftl",
