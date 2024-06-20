@@ -12,5 +12,56 @@
 }
 
 .my-root-class body {
-	background: url(./assets/background.svg) no-repeat center center fixed;
+	background: url(./assets/background.png);
+	background-color: black;
+	background-repeat: no-repeat;
+	background-position: top right;
+	background-size: auto;
+}
+
+#kc-header {
+	background:white;
+	display: flex;
+	flex-direction: column;
+}
+
+#kc-header img {
+	margin-left: -30px;
+	height: 30%;
+	Width: 30%;
+}
+
+#kc-header-wrapper {
+	font-size: 20px;
+	text-align: left;
+	height: 10px;
+	padding-top: 10px;
+	padding-left: 0px;
+	padding-bottom: 0px;
+	text-transform: capitalize;
+	color: black;
+}
+
+#pct-login {
+	margin-top: 0;
+	margin-left: 0;
+	height: 100%;
+}
+
+#kc-page-title {
+	margin-top: 0;
+	padding-top: 0px;
+	text-align: left;
+	font-weight: bold;
+}
+
+#pct-login-container{
+	padding-top: 0px;
+	height: 100vh;
+}
+
+#kc-login {
+	background-color: black !important;
+	background-image:none !important;
+	color: white;
 }

@@ -56,25 +56,12 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
     }
 
     return (
-        <div className={getClassName("kcLoginClass")}>
-            <div id="kc-header" className={getClassName("kcHeaderClass")}>
-                <div 
-                    id="kc-header-wrapper" 
-                    className={getClassName("kcHeaderWrapperClass")}
-                    style={{ "fontFamily": '"Work Sans"' }}
-                >
-                    {/* 
-                        Here we are referencing the `keycloakify-logo.png` in the `public` directory.  
-                        When possible don't use this approach, instead ...
-                    */}
-                    <img src={`${import.meta.env.BASE_URL}keycloakify-logo.png`} alt="Keycloakify logo" width={50} />
-                    {msg("loginTitleHtml", realm.displayNameHtml)}!!!
-                    {/* ...rely on the bundler to import your assets, it's more efficient */}
-                    <img src={keycloakifyLogoPngUrl} alt="Keycloakify logo" width={50} />
-                </div>
-            </div>
+        <div id="pct-login-container" className={getClassName("kcLoginClass")}>
 
-            <div className={clsx(getClassName("kcFormCardClass"), displayWide && getClassName("kcFormCardAccountClass"))}>
+
+            <div id="pct-login"
+                className={clsx(getClassName("kcFormCardClass"), displayWide && getClassName("kcFormCardAccountClass"))}>
+
                 <header className={getClassName("kcFormHeaderClass")}>
                     {realm.internationalizationEnabled && (assert(locale !== undefined), true) && locale.supported.length > 1 && (
                         <div id="kc-locale">
@@ -84,7 +71,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                                         {labelBySupportedLanguageTag[currentLanguageTag]}
                                     </a>
                                     <ul>
-                                        {locale.supported.map(({ languageTag }) => (
+                                        {locale.supported.map(({languageTag}) => (
                                             <li key={languageTag} className="kc-dropdown-item">
                                                 <a href="#" onClick={() => changeLocale(languageTag)}>
                                                     {labelBySupportedLanguageTag[languageTag]}
@@ -96,6 +83,17 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                             </div>
                         </div>
                     )}
+                    <div id="kc-header" className={getClassName("kcHeaderClass")}>
+                        <img src={keycloakifyLogoPngUrl} alt="Keycloakify logo"/>
+                        <div
+                            id="kc-header-wrapper"
+                            className={getClassName("kcHeaderWrapperClass")}
+                            style={{"fontFamily": '"Work Sans"'}}
+                        >
+
+                            {msg("loginTitleHtml", realm.displayNameHtml)}
+                        </div>
+                    </div>
                     {!(auth !== undefined && auth.showUsername && !auth.showResetCredentials) ? (
                         displayRequiredFields ? (
                             <div className={getClassName("kcContentWrapperClass")}>
@@ -106,7 +104,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                                     </span>
                                 </div>
                                 <div className="col-md-10">
-                                    <h1 id="kc-page-title">{headerNode}</h1>
+                                    <h1 id="kc-page-title">{headerNode} xx </h1>
                                 </div>
                             </div>
                         ) : (
@@ -156,10 +154,14 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                         {/* App-initiated actions should not see warning messages about the need to complete the action during login. */}
                         {displayMessage && message !== undefined && (message.type !== "warning" || !isAppInitiatedAction) && (
                             <div className={clsx("alert", `alert-${message.type}`)}>
-                                {message.type === "success" && <span className={getClassName("kcFeedbackSuccessIcon")}></span>}
-                                {message.type === "warning" && <span className={getClassName("kcFeedbackWarningIcon")}></span>}
-                                {message.type === "error" && <span className={getClassName("kcFeedbackErrorIcon")}></span>}
-                                {message.type === "info" && <span className={getClassName("kcFeedbackInfoIcon")}></span>}
+                                {message.type === "success" &&
+                                    <span className={getClassName("kcFeedbackSuccessIcon")}></span>}
+                                {message.type === "warning" &&
+                                    <span className={getClassName("kcFeedbackWarningIcon")}></span>}
+                                {message.type === "error" &&
+                                    <span className={getClassName("kcFeedbackErrorIcon")}></span>}
+                                {message.type === "info" &&
+                                    <span className={getClassName("kcFeedbackInfoIcon")}></span>}
                                 <span
                                     className="kc-feedback-text"
                                     dangerouslySetInnerHTML={{
@@ -182,7 +184,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                                     )}
                                 >
                                     <div className={getClassName("kcFormGroupClass")}>
-                                        <input type="hidden" name="tryAnotherWay" value="on" />
+                                        <input type="hidden" name="tryAnotherWay" value="on"/>
                                         <a
                                             href="#"
                                             id="try-another-way"

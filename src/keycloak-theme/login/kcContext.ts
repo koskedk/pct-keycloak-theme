@@ -25,7 +25,7 @@ export const { getKcContext } = createGetKcContext<KcContextExtension>({
 			//Uncomment the following line for hiding the Alert message
 			//"message": undefined
 			//Uncomment the following line for showing an Error message
-			//message: { type: "error", summary: "This is an error" }
+			message: { type: "error", summary: "This is an error" }
 		},
 		{
 			pageId: "my-extra-page-2.ftl",
@@ -35,7 +35,7 @@ export const { getKcContext } = createGetKcContext<KcContextExtension>({
 			//NOTE: You will either use register.ftl (legacy) or register-user-profile.ftl, not both
 			pageId: "register-user-profile.ftl",
 			locale: {
-				currentLanguageTag: "fr"
+				currentLanguageTag: "en"
 			},
 			profile: {
 				attributes: [
@@ -97,7 +97,7 @@ export const { getKcContext } = createGetKcContext<KcContextExtension>({
 
 export const { kcContext } = getKcContext({
 	// Uncomment to test the login page for development.
-	//mockPageId: "login.ftl",
+	mockPageId: "login.ftl",
 });
 
 
