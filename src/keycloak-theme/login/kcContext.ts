@@ -20,9 +20,9 @@ export const { getKcContext } = createGetKcContext<KcContextExtension>({
 			social:{
 				providers:[
 					{
-						displayName: "Microsoft-Palladium",
+						displayName: "Microsoft-XXXXXXX",
 						providerId: "oidc",
-						loginUrl: "/auth/realms/pct_demo/broker/azure_ip/login?client_id=nextgen-pct-demo&tab_id=7bcguhEMahs&session_code=TbTYKb2NqLU9C4cCVqntNnJojhVDNzWWwJz9n-sH2zg",
+						loginUrl: "/auth/realms/pct_demo/broker/azure_ip/login?client_id=nextgen-pct-demo&tab_id=00s&session_code=xyz",
 						alias: "azure_ip",
 					}
 				]
