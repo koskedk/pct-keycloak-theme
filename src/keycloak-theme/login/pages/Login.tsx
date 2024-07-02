@@ -48,7 +48,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                 realm.registrationAllowed &&
                 !registrationDisabled
             }
-            displayWide={realm.password && social.providers !== undefined}
+            displayWide={false}
             headerNode={msg("doLogIn")}
             infoNode={
                 <div id="kc-registration">
@@ -61,14 +61,9 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                 </div>
             }
         >
-            <div id="kc-form" className={clsx(realm.password && social.providers !== undefined && getClassName("kcContentWrapperClass"))}>
+            <div id="kc-form">
                 <div
-                    id="kc-form-wrapper"
-                    className={clsx(
-                        realm.password &&
-                        social.providers && [getClassName("kcFormSocialAccountContentClass"), getClassName("kcFormSocialAccountClass")]
-                    )}
-                >
+                    id="kc-form-wrapper">
                     {realm.password && (
                         <form id="kc-form-login" onSubmit={onSubmit} action={url.loginAction} method="post">
                             <div className={getClassName("kcFormGroupClass")}>
@@ -180,7 +175,6 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                 {realm.password && social.providers !== undefined && (
                     <div
                         id="kc-social-providers"
-                        className={clsx(getClassName("kcFormSocialAccountContentClass"), getClassName("kcFormSocialAccountClass"))}
                     >
                         <ul
                             className={clsx(

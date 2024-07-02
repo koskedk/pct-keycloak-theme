@@ -65,3 +65,21 @@
 	background-image:none !important;
 	color: white;
 }
+
+#kc-form-wrapper {
+	border: none !important;
+}
+
+#kc-social-providers{
+	margin-top: 20px;
+	padding-top: 20px;
+	border-top: 1px solid #d1d1d1;
+
+}
+
+#kc-form {
+	display: flex;
+	flex-direction: column;
+}
+
+

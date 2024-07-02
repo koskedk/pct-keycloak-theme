@@ -17,6 +17,16 @@ export type KcContextExtension =
 export const { getKcContext } = createGetKcContext<KcContextExtension>({
 	mockData: [
 		{
+			social:{
+				providers:[
+					{
+						displayName: "Microsoft-Palladium",
+						providerId: "oidc",
+						loginUrl: "/auth/realms/pct_demo/broker/azure_ip/login?client_id=nextgen-pct-demo&tab_id=7bcguhEMahs&session_code=TbTYKb2NqLU9C4cCVqntNnJojhVDNzWWwJz9n-sH2zg",
+						alias: "azure_ip",
+					}
+				]
+			},
 			pageId: "login.ftl",
 			locale: {
 				//When we test the login page we do it in french
